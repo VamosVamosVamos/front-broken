@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 export default function Scene() {
   return (
     <View style={styles.container}>
+
       <Text  style={styles.vamos} >VAMOS</Text>
       <TextInput
        style={styles.input}
@@ -22,6 +23,7 @@ export default function Scene() {
       }}
     ></View>
      {/* <View style={{ backgroundColor: "grey", flex: 0.3 , width: 350 ,fontSize:60   }} /> */}
+
     </View>
     
   );
