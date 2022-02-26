@@ -1,21 +1,74 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
+import { StyleSheet, Text, View, TextInput  } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+export default function Scene() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text  style={styles.vamos} >VAMOS</Text>
+      <TextInput
+       style={styles.input}
+        placeholder="Search for stadium"
+      />
+      <Text  style={styles.sign} >Signup</Text>
+      <Text  style={styles.log} >Login</Text>
+      <Icon name="navicon"  style={styles.category}  />
+      {/* <StatusBar style="auto" /> */}
+      <View
+      style={{
+        flexDirection: "column",
+        padding: 20,
+        left:100,
+        height: 50
+      }}
+    ></View>
+     {/* <View style={{ backgroundColor: "grey", flex: 0.3 , width: 350 ,fontSize:60   }} /> */}
     </View>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 24,
+    backgroundColor: "#fff"
   },
-});
+  input: {
+    height:40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 20,
+    left:50,
+    borderRadius:15,
+    borderColor:'#0C4488',
+    width:250,
+    top:50
+  },
+  vamos:{
+    color:'#0C4488',
+    top:55,
+    fontSize:27,
+    left:25,
+    fontFamily:'Avenir-Medium'
+  },
+  category:{
+    fontSize:25,
+    bottom:85,
+    right:10,
+    color:'#0C4488'
+  },
+
+  sign:{
+    left:270,
+    bottom:45,
+    fontSize:17,
+    color:'#0C4488'
+  },
+  log:{
+    left:335,
+    bottom:65,
+    fontSize:17,
+    color:'#0C4488'
+  }
+})
+
