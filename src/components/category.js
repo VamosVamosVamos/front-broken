@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, Image,ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import stadiums from './data' 
-export default function App() {
+export default function Category() {
   return (
     <ScrollView>
     <View style={styles.container}>
@@ -85,4 +85,3 @@ const styles = StyleSheet.create({
     color:'#0C4488'
   }
 })
-
