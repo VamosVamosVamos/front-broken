@@ -1,12 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
 import HomePage from "./components/HomePage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SignIn from "./components/SignUp";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import stadiums from "./data";
 function HomeScreen() {
   return (
     <View>
@@ -37,6 +38,24 @@ function Homee() {
     </View>
   );
 }
+{
+  stadiums.map((element, index) => {
+    return (
+      <ScrollView>
+        <View key={index} style={{ margin: 10 }}>
+          <Image
+            source={{ uri: element.image }}
+            style={{ width: 330, height: 100 }}
+          />
+          <Text>{element.name}</Text>
+          <Text>{element.adress}</Text>
+          <Text>price :{element.price} DT</Text>
+          <Text>{element.contact}</Text>
+        </View>
+      </ScrollView>
+    );
+  });
+}
 
 const Stack = createNativeStackNavigator();
 function App() {
@@ -60,5 +79,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "73%",
+  },
+  category: {
+    fontSize: 25,
+    bottom: 85,
+    right: 10,
+    color: "#0C4488",
+  },
+
+  sign: {
+    left: 270,
+    bottom: 45,
+    fontSize: 17,
+    color: "#0C4488",
+  },
+  log: {
+    left: 335,
+    bottom: 65,
+    fontSize: 17,
+    color: "#0C4488",
   },
 });

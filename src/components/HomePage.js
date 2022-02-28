@@ -1,4 +1,5 @@
 // import React from "react";
+import stadiums from "../data";
 import { Searchbar } from "react-native-paper";
 import {
   StyleSheet,
@@ -7,6 +8,8 @@ import {
   TextInput,
   Pressable,
   Button,
+  Image,
+  ScrollView,
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { NavigationContainer } from "@react-navigation/native";
@@ -47,7 +50,22 @@ export default function HomePage({ navigation }) {
           height: 50,
         }}
       ></View>
-      {/* <View style={{ backgroundColor: "grey", flex: 0.3 , width: 350 ,fontSize:60   }} /> */}
+      <ScrollView>
+        {stadiums.map((element, index) => {
+          return (
+            <View key={index} style={{ margin: 10 }}>
+              <Image
+                source={{ uri: element.image }}
+                style={{ width: 330, height: 100 }}
+              />
+              <Text>{element.name}</Text>
+              <Text>{element.adress}</Text>
+              <Text>price :{element.price} DT</Text>
+              <Text>{element.contact}</Text>
+            </View>
+          );
+        })}
+      </ScrollView>
     </View>
   );
 }
@@ -68,7 +86,6 @@ const styles = StyleSheet.create({
     top: 25,
     fontSize: 27,
     left: 25,
-    fontFamily: "Avenir-Medium",
   },
   category: {
     fontSize: 25,
