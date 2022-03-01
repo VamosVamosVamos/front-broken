@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const Home = () => {
+const Football = () => {
   return (
     <View>
-      <Text> YOU ARE IN </Text>
+      <Text> YOU ARE IN football </Text>
     </View>
   );
 };
 
-export default Home;
+export default Football;

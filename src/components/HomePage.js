@@ -1,32 +1,28 @@
 // import React from "react";
+import * as React from "react";
 import stadiums from "../data";
 import { Searchbar } from "react-native-paper";
 import {
   StyleSheet,
   Text,
   View,
-  TextInput,
   Pressable,
-  Button,
   Image,
   ScrollView,
 } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import * as React from "react";
+
 
 export default function HomePage({ navigation }) {
   const [searchQuery, setSearchQuery] = React.useState("");
   const onChangeSearch = (query) => setSearchQuery(query);
 
   const SignInn = () => {
-    console.warn("working");
+   
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.vamos}>VAMOS</Text>
+      <Text style={styles.vamos}>Hello,</Text>
       <Searchbar
         style={styles.searchBar}
         placeholder="Search"
@@ -40,7 +36,7 @@ export default function HomePage({ navigation }) {
       <Pressable onPress={() => navigation.navigate("Login")}>
         <Text style={styles.log}>Login</Text>
       </Pressable>
-      <Icon name="navicon" style={styles.category} />
+    
       {/* <StatusBar style="auto" /> */}
       <View
         style={{
@@ -60,8 +56,8 @@ export default function HomePage({ navigation }) {
               />
               <Text>{element.name}</Text>
               <Text>{element.adress}</Text>
-              <Text>price :{element.price} DT</Text>
-              <Text>{element.contact}</Text>
+              {/* <Text>price :{element.price} DT</Text> */}
+              {/* <Text>{element.contact}</Text> */}
             </View>
           );
         })}
@@ -69,6 +65,7 @@ export default function HomePage({ navigation }) {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   searchBar: {
