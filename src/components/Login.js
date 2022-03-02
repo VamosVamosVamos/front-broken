@@ -9,11 +9,7 @@ import React, { useEffect, useState } from "react";
 import Input from "./Input";
 import { useNavigation } from "@react-navigation/native";
 import { auth } from "../../firebase";
-
-// const onLogin = () => {
-//   console.warn("working");
-// };
-
+import firebase from "firebase";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,17 +22,33 @@ const Login = () => {
         navigation.navigate("Home");
       }
     });
+
     return unsubscribe;
   }, []);
 
+  // const handlesLogin = () => {
+  //   auth
+  //     .SignInWithEmailAndPassword(email, password)
+  //     .then((userCredentials) => {
+  //       const user = userCredentials.user;
+  //       console.log("login with ", user.email);
+  //     })
+  //     .catch((error) => error.message);
+  // };
   const handlesLogin = () => {
-    auth
-      .SignInWithEmailAndPassword(email.trim(), password)
-      .then((userCredentials) => {
-        const user = userCredentials.user;
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email.trim(), password)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
         console.log("login with ", user.email);
+        // ...
       })
-      .catch((error) => error.message);
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
   };
 
   return (
