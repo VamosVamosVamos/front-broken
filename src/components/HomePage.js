@@ -1,7 +1,7 @@
 // import React from "react";
 import * as React from "react";
 import stadiums from "../data";
-import { Searchbar } from "react-native-paper";
+import { Button, Searchbar} from "react-native-paper";
 import {
   StyleSheet,
   Text,
@@ -12,40 +12,26 @@ import {
 } from "react-native";
 
 
+// import SignUp from './SignUp'
+// import Event from "./Event";
 export default function HomePage({ navigation }) {
   const [searchQuery, setSearchQuery] = React.useState("");
   const onChangeSearch = (query) => setSearchQuery(query);
 
-  const SignInn = () => {
-   
-  };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.vamos}>Hello,</Text>
+   
+  <View style={styles.container}>
       <Searchbar
         style={styles.searchBar}
         placeholder="Search"
         onChangeText={onChangeSearch}
         value={searchQuery}
       />
-      <Pressable onPress={() => navigation.navigate("SignUp")}>
-        <Text style={styles.sign}>Signup</Text>
-      </Pressable>
 
-      <Pressable onPress={() => navigation.navigate("Login")}>
-        <Text style={styles.log}>Login</Text>
-      </Pressable>
-    
-      {/* <StatusBar style="auto" /> */}
-      <View
-        style={{
-          flexDirection: "column",
-          padding: 20,
-          left: 100,
-          height: 50,
-        }}
-      ></View>
+     
+      
+  
       <ScrollView>
         {stadiums.map((element, index) => {
           return (
@@ -56,6 +42,12 @@ export default function HomePage({ navigation }) {
               />
               <Text>{element.name}</Text>
               <Text>{element.adress}</Text>
+              <Pressable><Button
+              title="Click to show more Info"  
+              onPress={() => navigation.navigate('Event')}  
+              >
+                <Text>Click to show more Info</Text>
+              </Button></Pressable>
               {/* <Text>price :{element.price} DT</Text> */}
               {/* <Text>{element.contact}</Text> */}
             </View>
@@ -69,7 +61,7 @@ export default function HomePage({ navigation }) {
 
 const styles = StyleSheet.create({
   searchBar: {
-    top: 30,
+    bottom: 10,
     width: 250,
     left: 60,
   },
@@ -78,28 +70,17 @@ const styles = StyleSheet.create({
     padding: 24,
     backgroundColor: "#fff",
   },
-  vamos: {
-    color: "#0C4488",
-    top: 25,
-    fontSize: 27,
-    left: 25,
-  },
-  category: {
-    fontSize: 25,
-    bottom: 105,
-    right: 10,
-    color: "#0C4488",
-  },
+
 
   sign: {
     left: 270,
-    bottom: 56,
+    bottom: 80,
     fontSize: 17,
     color: "#0C4488",
   },
   log: {
-    left: 335,
-    bottom: 80,
+    left: 327,
+    bottom: 100,
     fontSize: 17,
     color: "#0C4488",
   },

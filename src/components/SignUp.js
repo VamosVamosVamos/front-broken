@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import { auth } from "../../firebase";
 import Input from "./Input";
 
-const SignIn = () => {
+const SignUp = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [email, setEmail] = useState("");
@@ -87,4 +87,4 @@ const styles = StyleSheet.create({
     color: "white",
   },
 });
-export default SignIn;
+export default SignUp;
