@@ -93,4 +93,4 @@ const styles = StyleSheet.create({
     color: "white",
   },
 });
-export default SignIn;
+export default SignUp;

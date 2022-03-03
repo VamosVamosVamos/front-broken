@@ -1,19 +1,26 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
-import HomePage from "./components/HomePage";
+import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SignIn from "./components/SignUp";
 import Login from "./components/Login";
+import HomePage from "./screens/HomePage";
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+import  StackNavigator  from "./components/StackNavigator";
+import BottomTabNavigator from './components/TabNavigator' 
+import DrawerNavigator from "./components/DrawerNavigation";
+
+const Drawer = createDrawerNavigator();
 import Home from "./components/Home";
 import SettingBar from "./components/SettingBar";
 import stadiums from "./data";
 
-const Stack = createNativeStackNavigator();
-function App() {
+const  App = () => {
   return (
     <NavigationContainer>
+    {/* <BottomTabNavigator/> */}
+
+    <DrawerNavigator/>
       <Stack.Navigator>
         {/* <Stack.Screen name="HomePage" component={HomePage} /> */}
         <Stack.Screen name="SettingBar" component={SettingBar} />
@@ -33,12 +40,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "73%",
-  },
-  category: {
-    fontSize: 25,
-    bottom: 85,
-    right: 10,
-    color: "#0C4488",
   },
 
   sign: {
