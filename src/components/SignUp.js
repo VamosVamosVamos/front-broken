@@ -8,10 +8,10 @@ import {
 import React, { useState } from "react";
 import { auth } from "../../firebase";
 import Input from "./Input";
+import { useNavigation } from "@react-navigation/native";
 
 const SignIn = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setlastName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
@@ -20,9 +20,6 @@ const SignIn = () => {
 
   const { height } = useWindowDimensions();
 
-  // const onSignIn = () => {
-  //   console.warn("working");
-  // };
   const handlesSignUp = () => {
     auth
       .createUserWithEmailAndPassword(email.trim(), password)
@@ -32,15 +29,21 @@ const SignIn = () => {
       })
       .catch((error) => alert(error.message));
   };
+  const navigation = useNavigation();
+
+  const functionOne = () => {
+    navigation.navigate("Login");
+  };
+
+  functionCombined = () => {
+    functionOne();
+    handlesSignUp();
+  };
 
   return (
     <View style={styles.root}>
-      <Input
-        placeholder="firstName"
-        value={firstName}
-        setValue={setFirstName}
-      />
-      <Input placeholder="lastName" value={lastName} setValue={setlastName} />
+      <Input placeholder="username" value={username} setValue={setUsername} />
+
       <Input placeholder="email" value={email} setValue={setEmail} />
       <Input
         placeholder="password"
@@ -62,7 +65,10 @@ const SignIn = () => {
         setValue={setPhoneNumber}
       />
 
-      <Pressable onPress={handlesSignUp} style={styles.container}>
+      <Pressable
+        onPress={() => this.functionCombined()}
+        style={styles.container}
+      >
         <Text style={styles.text}>Sign up </Text>
       </Pressable>
     </View>

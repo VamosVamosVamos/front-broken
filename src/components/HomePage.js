@@ -1,4 +1,3 @@
-// import React from "react";
 import stadiums from "../data";
 import { Searchbar } from "react-native-paper";
 import {
