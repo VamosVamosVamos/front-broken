@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import SignIn from "./components/SignUp";
 import Login from "./components/Login";
-import HomePage from "./components/HomePage";
+import HomePage from "./screens/HomePage";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import  StackNavigator  from "./components/StackNavigator";

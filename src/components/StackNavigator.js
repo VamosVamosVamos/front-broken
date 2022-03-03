@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "./Login";
-import HomePage from "./HomePage";
+import HomePage from "../screens/HomePage";
 import SignUp from './SignUp'
 const Stack = createStackNavigator();
 const screenOptionStyle = {
