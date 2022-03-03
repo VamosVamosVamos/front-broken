@@ -11,8 +11,7 @@ import Input from "./Input";
 import { useNavigation } from "@react-navigation/native";
 
 const SignIn = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setlastName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
@@ -43,12 +42,8 @@ const SignIn = () => {
 
   return (
     <View style={styles.root}>
-      <Input
-        placeholder="firstName"
-        value={firstName}
-        setValue={setFirstName}
-      />
-      <Input placeholder="lastName" value={lastName} setValue={setlastName} />
+      <Input placeholder="username" value={username} setValue={setUsername} />
+
       <Input placeholder="email" value={email} setValue={setEmail} />
       <Input
         placeholder="password"

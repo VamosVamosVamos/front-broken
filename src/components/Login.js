@@ -26,30 +26,31 @@ const Login = () => {
     return unsubscribe;
   }, []);
 
-  // const handlesLogin = () => {
-  //   auth
-  //     .SignInWithEmailAndPassword(email, password)
-  //     .then((userCredentials) => {
-  //       const user = userCredentials.user;
-  //       console.log("login with ", user.email);
-  //     })
-  //     .catch((error) => error.message);
-  // };
   const handlesLogin = () => {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email.trim(), password)
-      .then((userCredential) => {
-        // Signed in
-        var user = userCredential.user;
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((userCredentials) => {
+        const user = userCredentials.user;
         console.log("login with ", user.email);
-        // ...
       })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-      });
+      .catch((error) => error.message);
   };
+
+  // const handlesLogin = () => {
+  //   firebase
+  //     .auth()
+  //     .signInWithEmailAndPassword(email.trim(), password)
+  //     .then((userCredential) => {
+  //       // Signed in
+  //       var user = userCredential.user;
+  //       console.log("login with ", user.email);
+  //       // ...
+  //     })
+  //     .catch((error) => {
+  //       var errorCode = error.code;
+  //       var errorMessage = error.message;
+  //     });
+  // };
 
   return (
     <View style={styles.root}>
