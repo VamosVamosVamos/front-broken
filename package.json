@@ -11,18 +11,13 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^12.0.5",
-<<<<<<< HEAD
     "@react-native-async-storage/async-storage": "~1.15.0",
     "@react-navigation/bottom-tabs": "^6.2.0",
     "@react-navigation/drawer": "^6.3.1",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
     "@react-navigation/stack": "^6.1.1",
-=======
-    "@react-navigation/native": "^6.0.8",
-    "@react-navigation/native-stack": "^6.5.0",
     "AsyncStorage": "^0.1.5",
->>>>>>> f23b56befc40cea075da48553cdc1b1ae77e5839
     "bcrypt": "^5.0.1",
     "chokidar": "^3.5.3",
     "cors": "^2.8.5",
@@ -50,10 +45,7 @@
     "react-native-gesture-handler": "^2.1.0",
     "react-native-numeric-input": "^1.9.1",
     "react-native-paper": "^4.11.2",
-<<<<<<< HEAD
-=======
     "react-native-popup-menu": "^0.15.12",
->>>>>>> f23b56befc40cea075da48553cdc1b1ae77e5839
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
     "react-native-select-dropdown": "^1.8.0",

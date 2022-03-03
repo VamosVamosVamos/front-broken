@@ -10,14 +10,8 @@ import { auth } from "../../firebase";
 import Input from "./Input";
 import { useNavigation } from "@react-navigation/native";
 
-<<<<<<< HEAD
-const SignUp = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setlastName] = useState("");
-=======
 const SignIn = () => {
   const [username, setUsername] = useState("");
->>>>>>> f23b56befc40cea075da48553cdc1b1ae77e5839
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
