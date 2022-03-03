@@ -44,8 +44,6 @@ export default function HomePage({ navigation }) {
               >
                 <Text>Click to show more Info</Text>
               </Button></Pressable> */}
-              {/* <Text>price :{element.price} DT</Text> */}
-              {/* <Text>{element.contact}</Text> */}
             </View>
           );
         })}
